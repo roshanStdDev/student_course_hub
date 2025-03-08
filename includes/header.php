@@ -3,6 +3,11 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+
+// Set default page title if not already defined
+if (!isset($page_title)) {
+    $page_title = '';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +18,24 @@ if (session_status() == PHP_SESSION_NONE) {
     
     <title><?php echo isset($page_title) ? htmlspecialchars($page_title) . ' - ' : ''; ?>Student Course Hub</title>
     
-     
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/header.css">
+
+    <!-- Page-specific CSS -->
+    <?php if($page_title === 'Home'): ?>
+    <link rel="stylesheet" href="public/css/homepage.css">
+    <?php elseif(strpos($_SERVER['PHP_SELF'], 'programmes.php') !== false): ?>
+    <link rel="stylesheet" href="public/css/programmes.css">
+    <?php endif; ?>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -73,3 +90,6 @@ if (session_status() == PHP_SESSION_NONE) {
             </nav>
         </div>
     </header>
+    
+    <!-- Main Content -->
+    <main id="main-content"><?php echo isset($full_width) && $full_width ? '' : '<div class="container">'; ?>
