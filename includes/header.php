@@ -3,11 +3,6 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-
-// Set default page title if not already defined
-if (!isset($page_title)) {
-    $page_title = '';
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +16,7 @@ if (!isset($page_title)) {
     <!-- CSS Files -->
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/footer.css">
 
     <!-- Page-specific CSS -->
     <?php if($page_title === 'Home'): ?>
@@ -36,6 +32,7 @@ if (!isset($page_title)) {
     <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    
     <!-- Header -->
     <header>
         <div class="container header-container">
