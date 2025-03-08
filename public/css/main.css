@@ -1,0 +1,57 @@
+/* =======================================
+   Root Variables (Color Palette & Spacing)
+   ======================================= */
+   :root {
+    /* Primary Colors */
+    --primary-color: #000000;         /* Black */
+    --primary-dark: #333333;          /* Dark Gray */
+    --secondary-color: #ffffff;       /* White */
+    --button-color: #0070db;          /* Vibrant Blue */
+    --button-hover: #0055a5;          /* Darker Blue */
+    --badge-undergrad: #0070db;       /* Blue */
+    --badge-postgrad: #008055;        /* Green */
+    
+    /* Text Colors */
+    --text-color: #333333;            /* Dark Gray */
+    --text-light: #555555;            /* Medium Gray */
+    --text-lighter: #777777;          /* Light Gray */
+
+    /* Background Colors */
+    --background-color: #f8f9fa;      /* Off-white */
+    --background-alt: #e4e9f0;        /* Soft gray */
+    --white: #ffffff;                 /* Pure white */
+
+    /* Border & Shadows */
+    --border: #dddddd;                /* Light border */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.2);
+    --focus-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --border-radius: 4px;
+    --border-radius-lg: 8px;
+    --border-radius-pill: 20px;
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+
+    /* Layout */
+    --container-width: 1200px;
+}
+
+/* =======================================
+   🛠️ Reset & Base Styles
+   ======================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
