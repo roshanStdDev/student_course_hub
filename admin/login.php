@@ -36,6 +36,74 @@ if (session_status() == PHP_SESSION_NONE) {
         </div>
     </header>
 
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Admin Login</h2>
+                    <p>Enter your credentials to access the admin dashboard</p>
+                </div>
+                
+                <?php if(isset($_SESSION['login_error'])): ?>
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <?php 
+                        echo $_SESSION['login_error']; 
+                        unset($_SESSION['login_error']);
+                    ?>
+                </div>
+                <?php endif; ?>
+                
+                <?php if(isset($_SESSION['logout_message'])): ?>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i>
+                    <?php 
+                        echo $_SESSION['logout_message']; 
+                        unset($_SESSION['logout_message']);
+                    ?>
+                </div>
+                <?php endif; ?>
+                
+                <form class="auth-form" action="process-login.php" method="post">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="username" name="username" class="form-control" required autofocus>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group remember-me">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="remember_me">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="forgot-password.php" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </div>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>Need help? <a href="mailto:support@dmustduniversity.edu">Contact Support</a></p>
+                    <p><a href="../index.php"><i class="fas fa-arrow-left"></i> Return to Main Site</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="login-footer">
         <div class="container">
             <p class="copyright">
@@ -43,6 +111,21 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
         </div>
     </footer>
-    
+
+    <!-- JavaScript -->
+    <script>
+        // Alert auto-dismiss
+        const alerts = document.querySelectorAll('.alert');
+        
+        alerts.forEach(alert => {
+            setTimeout(() => {
+                alert.style.opacity = '0';
+                alert.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 500);
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
