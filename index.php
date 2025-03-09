@@ -155,6 +155,18 @@ require_once 'includes/header.php';
             </div>
         </div>
     </section>
+    
+   <!-- Call to Action Section  -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Take the Next Step?</h2>
+            <p class="mb-4">Explore our programmes and find the perfect match for your career aspirations.</p>
+            <div class="cta-buttons">
+                <a href="programmes.php" class="btn btn-primary">Browse Programmes</a>
+                <a href="search.php" class="btn btn-outline">Search Programmes</a>
+            </div>
+        </div>
+    </section>
 
 
 
