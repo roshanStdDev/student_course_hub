@@ -1,0 +1,241 @@
+/* =======================================
+   Search Page Styles for Student Course Hub
+   ======================================= */
+
+/* Page Header Styles - Matching programmes.css */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), #0a1a2a);
+    color: var(--white);
+    padding: var(--space-lg) 0;
+    margin-bottom: var(--space-lg);
+    border-radius: var(--radius-md);
+}
+
+.page-title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-sm);
+    font-weight: 700;
+    color: var(--white);
+}
+
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--text-sm);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: '/';
+    margin: 0 var(--space-xs);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: var(--white);
+}
+
+/* Search Section */
+.search-section {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+    margin-bottom: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+    padding-left: 15px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.section-description {
+    color: #666;
+    font-size: var(--text-md);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Search Form */
+.search-container {
+    max-width: 900px;
+    margin: var(--space-md) auto 0;
+}
+
+.search-form-large {
+    width: 100%;
+}
+
+.search-input-group {
+    display: flex;
+    margin-bottom: var(--space-md);
+}
+
+.search-input-large {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #ddd;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    font-size: var(--text-md);
+    transition: border-color 0.3s;
+}
+
+.search-input-large:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(102, 194, 255, 0.2);
+}
+
+.search-button-large {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0 25px;
+    border: none;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--text-md);
+}
+
+.search-button-large:hover {
+    background: #78ccff;
+}
+
+/* Filters */
+.search-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: var(--space-md);
+}
+
+.filter-group {
+    flex: 1;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.filter-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius-sm);
+    background-color: var(--white);
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(102, 194, 255, 0.1);
+}
+
+/* Active Filters */
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: var(--space-md);
+}
+
+.filter-tag {
+    background-color: rgba(102, 194, 255, 0.1);
+    border: 1px solid var(--secondary-color);
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: var(--text-sm);
+    display: flex;
+    align-items: center;
+}
+
+.remove-filter {
+    margin-left: 8px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.remove-filter:hover {
+    color: #ff6b6b;
+}
+
+.clear-all-filters {
+    color: var(--link-color);
+    font-size: var(--text-sm);
+    margin-left: auto;
+    padding: 6px 12px;
+}
+
+.clear-all-filters:hover {
+    text-decoration: underline;
+}
+
+/* Search Results */
+.search-results-section {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.results-title {
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+.results-count {
+    color: #666;
+    font-size: var(--text-sm);
+}
+
+.no-results {
+    text-align: center;
+    padding: var(--space-xl) 0;
+    color: #666;
+}
