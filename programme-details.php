@@ -106,8 +106,16 @@ require_once 'includes/header.php';
                     <?php endforeach; ?>
                 </div>
             </div>
-
             
+            <!-- Application CTA -->
+            <div class="application-cta">
+                <h2>Interested in this Programme?</h2>
+                <p>Take the next step in your educational journey and apply now or register your interest to receive more information.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Apply Now</a>
+                    <a href="register-interest.php?id=<?php echo $programme_id; ?>" class="btn btn-outline">Register Interest</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
