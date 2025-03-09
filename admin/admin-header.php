@@ -50,7 +50,66 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <i class="fas fa-bars"></i>
             </button>
             
+            <!-- Admin Navigation -->
+            <nav class="admin-nav">
+                <ul class="admin-nav-list">
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link <?php echo $current_page === 'dashboard.php' ? 'active' : ''; ?>" 
+                           href="dashboard.php">
+                           <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link <?php echo $current_page === 'programmes.php' ? 'active' : ''; ?>" 
+                           href="programmes.php">
+                           <i class="fas fa-graduation-cap"></i> Programmes
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link <?php echo $current_page === 'enquiries.php' ? 'active' : ''; ?>" 
+                           href="enquiries.php">
+                           <i class="fas fa-question-circle"></i> Enquiries
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link <?php echo $current_page === 'applications.php' ? 'active' : ''; ?>" 
+                           href="applications.php">
+                           <i class="fas fa-clipboard-list"></i> Applications
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link <?php echo $current_page === 'events.php' ? 'active' : ''; ?>" 
+                           href="events.php">
+                           <i class="fas fa-calendar-alt"></i> Events
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link <?php echo $current_page === 'settings.php' ? 'active' : ''; ?>" 
+                           href="settings.php">
+                           <i class="fas fa-cog"></i> Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
             
+            <!-- Admin User Menu -->
+            <div class="admin-user-menu">
+                <button class="admin-user-toggle">
+                    <div class="admin-user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <span class="admin-username"><?php echo htmlspecialchars($_SESSION['admin_username']); ?></span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <ul class="admin-dropdown-menu">
+                    <li><a href="profile.php"><i class="fas fa-user"></i> My Profile</a></li>
+                    <li><a href="settings.php"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="help.php"><i class="fas fa-question-circle"></i> Help</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
     
     <!-- Main Content -->
