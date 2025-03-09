@@ -79,66 +79,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetElement) {
                 e.preventDefault();
                 window.scrollTo({
-                    top: targetElement.offsetTop - 70, // Offset for fixed header
+                    top: targetElement.offsetTop - 70,
                     behavior: 'smooth'
                 });
             }
         });
     });
     
-    // =======================================
-    // Form Validation Enhancement
-    // =======================================
-    const forms = document.querySelectorAll('form');
-    
-    forms.forEach(form => {
-        const requiredInputs = form.querySelectorAll('[required]');
-        
-        // Add visual indicator for required fields
-        requiredInputs.forEach(input => {
-            const label = input.previousElementSibling;
-            if (label && label.tagName === 'LABEL') {
-                label.classList.add('required-field');
-            }
-        });
-        
-        // Custom validation messages
-        form.addEventListener('submit', function(e) {
-            let isValid = true;
-            
-            requiredInputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    
-                    // Add error state
-                    input.classList.add('input-error');
-                    
-                    // Check for existing error message
-                    const existingError = input.nextElementSibling;
-                    if (existingError && existingError.classList.contains('error-message')) {
-                        existingError.style.display = 'block';
-                    } else {
-                        // Create error message
-                        const errorMessage = document.createElement('div');
-                        errorMessage.classList.add('error-message');
-                        errorMessage.textContent = `This field is required`;
-                        input.insertAdjacentElement('afterend', errorMessage);
-                    }
-                } else {
-                    // Remove error state
-                    input.classList.remove('input-error');
-                    
-                    // Hide error message if exists
-                    const existingError = input.nextElementSibling;
-                    if (existingError && existingError.classList.contains('error-message')) {
-                        existingError.style.display = 'none';
-                    }
-                }
-            });
-            
-            if (!isValid) {
-                e.preventDefault();
-            }
-        });
-    });
 });

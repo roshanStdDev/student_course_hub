@@ -1,9 +1,10 @@
 /* =======================================
-   Root Variables for Student Course Hub
+   Main styles for Student Course Hub
    ======================================= */
 
-   :root {
-    /* Colors from paste.txt */
+/* Root Variables */
+:root {
+    /* Colors */
     --primary-color: #1a2a3a;
     --secondary-color: #66c2ff;
     --text-color: #333;
@@ -12,7 +13,7 @@
     --link-color: #0066cc;
     --hover-color: #004080;
     
-    /* Keeping some useful variables from the original */
+    /* Shadow */
     --shadow: rgba(0, 0, 0, 0.1);
     --shadow-darker: rgba(0, 0, 0, 0.18);
     --shadow-darkest: rgba(0, 0, 0, 0.25);
@@ -41,4 +42,91 @@
     
     /* Transitions */
     --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+main {
+    flex: 1;
+    padding: var(--space-md) 0;
+}
+
+section {
+    margin-bottom: var(--space-xl);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+h1 {
+    font-size: var(--text-3xl);
+}
+
+h2 {
+    font-size: var(--text-2xl);
+}
+
+h3 {
+    font-size: var(--text-xl);
+}
+
+h4 {
+    font-size: var(--text-lg);
+}
+
+h5 {
+    font-size: var(--text-md);
+}
+
+h6 {
+    font-size: var(--text-base);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--hover-color);
 }
