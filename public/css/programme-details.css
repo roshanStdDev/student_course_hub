@@ -1,0 +1,325 @@
+/* =======================================
+   Programme Details styles for Student Course Hub
+   ======================================= */
+
+/* Page Header Styles */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), #0a1a2a);
+    color: var(--white);
+    padding: var(--space-lg) 0;
+    margin-bottom: var(--space-lg);
+    border-radius: var(--radius-md);
+}
+
+.page-title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-sm);
+    font-weight: 700;
+    color: var(--white);
+}
+
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--text-sm);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: '/';
+    margin: 0 var(--space-xs);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: var(--white);
+}
+
+.programme-details-section {
+    margin-bottom: var(--space-xl);
+}
+
+.programme-details-container {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 15px var(--shadow);
+    overflow: hidden;
+}
+
+/* Programme Overview Styles */
+.programme-overview {
+    padding: var(--space-lg);
+    border-bottom: 1px solid #eee;
+}
+
+.programme-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid #eee;
+}
+
+.programme-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-undergraduate {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.badge-postgraduate {
+    background-color: #ff9966;
+    color: var(--white);
+}
+
+.programme-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    font-size: var(--text-sm);
+    color: #666;
+}
+
+.meta-item i {
+    margin-right: 8px;
+    color: var(--secondary-color);
+}
+
+.programme-description,
+.programme-career,
+.programme-requirements {
+    margin-bottom: var(--space-lg);
+}
+
+.section-title {
+    font-size: var(--text-lg);
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+    position: relative;
+    padding-left: 15px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* Programme Modules Styles */
+.programme-modules {
+    padding: var(--space-lg);
+    border-bottom: 1px solid #eee;
+}
+
+.modules-container {
+    margin-top: var(--space-md);
+}
+
+.module-year {
+    margin-bottom: var(--space-lg);
+}
+
+.module-year:last-child {
+    margin-bottom: 0;
+}
+
+.module-year-title {
+    font-size: var(--text-md);
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid #eee;
+}
+
+.module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.module-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.module-item:hover {
+    background-color: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.module-item i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+/* Dark Application CTA Styles */
+.application-cta {
+    padding: var(--space-xl) var(--space-lg);
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), #0a1a2a);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Add decorative elements similar to hero and CTA sections */
+.application-cta::before,
+.application-cta::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.application-cta::before {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    left: -100px;
+}
+
+.application-cta::after {
+    width: 250px;
+    height: 250px;
+    bottom: -125px;
+    right: -125px;
+}
+
+.application-cta h2 {
+    color: var(--white);
+    margin-bottom: var(--space-md);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.application-cta p {
+    margin-bottom: var(--space-lg);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--text-md);
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-buttons .btn {
+    padding: 14px 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: var(--radius-md);
+    min-width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-buttons .btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+}
+
+.cta-buttons .btn-primary:hover {
+    background-color: #78ccff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cta-buttons .btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.cta-buttons .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 768px) {
+    .application-cta {
+        padding: var(--space-xl) var(--space-xl);
+    }
+    
+    .application-cta h2 {
+        font-size: var(--text-2xl);
+    }
+    
+    .cta-buttons {
+        gap: var(--space-lg);
+    }
+    
+    .cta-buttons .btn {
+        min-width: 200px;
+    }
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .module-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .module-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
