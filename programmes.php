@@ -31,4 +31,20 @@ require_once 'includes/header.php';
     </div>
 </section>
 
+<!-- Filter Section -->
+<section class="filter-section">
+    <div class="container">
+        <div class="filter-container">
+            <div class="filter-header">
+                <h2 class="filter-title">Browse Programmes</h2>
+            </div>
+            <div class="filter-options">
+                <a href="programmes.php" class="filter-link <?php echo !$level ? 'active' : ''; ?>">All Programmes</a>
+                <a href="programmes.php?level=1" class="filter-link <?php echo $level === 1 ? 'active' : ''; ?>">Undergraduate</a>
+                <a href="programmes.php?level=2" class="filter-link <?php echo $level === 2 ? 'active' : ''; ?>">Postgraduate</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php require_once 'includes/footer.php'; ?>
