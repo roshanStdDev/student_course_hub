@@ -48,4 +48,68 @@ require_once 'includes/header.php';
     </div>
 </section>
 
+<!-- Programme Details -->
+<section class="programme-details-section">
+    <div class="container">
+        <div class="programme-details-container">
+            <!-- Programme Overview -->
+            <div class="programme-overview">
+                <div class="programme-header">
+                    <div class="programme-badge badge-<?php echo strtolower($programme['level']); ?>">
+                        <span><?php echo $programme['badge']; ?></span>
+                    </div>
+                    <div class="programme-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span><?php echo $programme['duration']; ?></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Programme Leader: <?php echo $programme['leader']; ?></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="programme-description">
+                    <h2 class="section-title">Programme Overview</h2>
+                    <p><?php echo $programme['description']; ?></p>
+                </div>
+                
+                <div class="programme-career">
+                    <h2 class="section-title">Career Prospects</h2>
+                    <p><?php echo $programme['career_prospects']; ?></p>
+                </div>
+                
+                <div class="programme-requirements">
+                    <h2 class="section-title">Entry Requirements</h2>
+                    <p><?php echo $programme['entry_requirements']; ?></p>
+                </div>
+            </div>
+            
+            <!-- Programme Modules -->
+            <div class="programme-modules">
+                <h2 class="section-title">Programme Structure</h2>
+                
+                <div class="modules-container">
+                    <?php foreach ($programme['modules'] as $year => $modules): ?>
+                    <div class="module-year">
+                        <h3 class="module-year-title"><?php echo $year; ?></h3>
+                        <ul class="module-list">
+                            <?php foreach ($modules as $module): ?>
+                            <li class="module-item">
+                                <i class="fas fa-book"></i>
+                                <span><?php echo $module; ?></span>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>
+
 <?php require_once 'includes/footer.php'; ?>
