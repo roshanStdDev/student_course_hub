@@ -261,5 +261,83 @@ require_once 'admin-header.php';
             </div>
         </div>
         
-        
+        <!-- Recent Activity -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 class="card-title">Activity Log</h2>
+            </div>
+            <div class="card-body">
+                <?php if (empty($recent_activity)): ?>
+                    <p class="text-muted">No recent activity found.</p>
+                <?php else: ?>
+                    <div class="activity-timeline">
+                        <?php foreach ($recent_activity as $activity): ?>
+                            <div class="activity-item">
+                                <?php
+                                // Set icon based on activity type
+                                $icon_class = 'fas fa-question';
+                                $activity_label = 'Activity';
+                                
+                                switch ($activity['type']) {
+                                    case 'interest_registration':
+                                        $icon_class = 'fas fa-clipboard-list';
+                                        $activity_label = 'New Interest Registration';
+                                        break;
+                                }
+                                ?>
+                                <div class="activity-icon">
+                                    <i class="<?php echo $icon_class; ?>"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-header">
+                                        <span class="activity-label"><?php echo $activity_label; ?></span>
+                                        <span class="activity-date"><?php echo date('d M Y, H:i', strtotime($activity['date'])); ?></span>
+                                    </div>
+                                    <div class="activity-title">
+                                        <?php echo htmlspecialchars($activity['title']); ?>
+                                    </div>
+                                    <?php if (!empty($activity['details'])): ?>
+                                        <div class="activity-details">
+                                            <?php echo htmlspecialchars($activity['details']); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-5">
+        <!-- Popular Programmes -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Popular Programmes</h2>
+                <a href="programmes.php" class="btn btn-sm">View All</a>
+            </div>
+            <div class="card-body">
+                <?php if (empty($popular_programmes)): ?>
+                    <p class="text-muted">No programme data available.</p>
+                <?php else: ?>
+                    <div class="popular-programmes">
+                        <?php foreach ($popular_programmes as $programme): ?>
+                            <div class="popular-programme-item">
+                                <div class="popular-programme-info">
+                                    <h3><?php echo htmlspecialchars($programme['ProgrammeName']); ?></h3>
+                                    <span class="programme-level"><?php echo htmlspecialchars($programme['LevelName']); ?></span>
+                                </div>
+                                <div class="popular-programme-count">
+                                    <span class="badge"><?php echo $programme['interest_count']; ?></span>
+                                    <span class="count-label">Interests</span>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
 <?php require_once 'admin-footer.php'; ?>

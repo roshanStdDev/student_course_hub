@@ -125,42 +125,9 @@
     }
 }
 
-/* Dashboard Statistics Cards */
+/* Dashboard Stats */
 .dashboard-stats {
     margin-bottom: var(--space-xl);
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.col-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.col-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-@media (min-width: 992px) {
-    .col-lg-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-    
-    .col-lg-7 {
-        flex: 0 0 58.333333%;
-        max-width: 58.333333%;
-    }
 }
 
 .stat-card {
@@ -175,6 +142,22 @@
     transition: var(--transition);
     border-left: 4px solid #ddd;
     height: 100%;
+}
+
+.primary-stat {
+    border-left-color: var(--primary-color);
+}
+
+.secondary-stat {
+    border-left-color: #28a745;
+}
+
+.tertiary-stat {
+    border-left-color: #fd7e14;
+}
+
+.quaternary-stat {
+    border-left-color: #dc3545;
 }
 
 .stat-card:hover {
@@ -220,43 +203,27 @@
     align-items: center;
     justify-content: center;
     font-size: var(--text-lg);
+    color: var(--primary-color);
     margin-left: var(--space-sm);
-}
-
-/* Stat card colors */
-.primary-stat {
-    border-left-color: var(--primary-color);
 }
 
 .primary-stat .stat-card-icon {
     color: var(--primary-color);
 }
 
-.secondary-stat {
-    border-left-color: #28a745;
-}
-
 .secondary-stat .stat-card-icon {
     color: #28a745;
-}
-
-.tertiary-stat {
-    border-left-color: #fd7e14;
 }
 
 .tertiary-stat .stat-card-icon {
     color: #fd7e14;
 }
 
-.quaternary-stat {
-    border-left-color: #dc3545;
-}
-
 .quaternary-stat .stat-card-icon {
     color: #dc3545;
 }
 
-/* Card Component */
+/* Cards */
 .card {
     background-color: var(--white);
     border-radius: var(--radius-md);
@@ -285,7 +252,11 @@
     padding: var(--space-md);
 }
 
-/* Table Styles */
+.mt-4 {
+    margin-top: var(--space-lg);
+}
+
+/* Tables */
 .table-responsive {
     display: block;
     width: 100%;
@@ -351,15 +322,168 @@
     transform: translateY(-2px);
 }
 
+/* Activity Timeline */
+.activity-timeline {
+    position: relative;
+    padding-left: var(--space-md);
+}
+
+.activity-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    width: 2px;
+    background-color: #eee;
+}
+
+.activity-item {
+    position: relative;
+    padding-left: var(--space-xl);
+    padding-bottom: var(--space-md);
+}
+
+.activity-item:last-child {
+    padding-bottom: 0;
+}
+
+.activity-icon {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-sm);
+    z-index: 1;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-xs);
+}
+
+.activity-label {
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--primary-color);
+}
+
+.activity-date {
+    font-size: var(--text-xs);
+    color: #6c757d;
+}
+
+.activity-title {
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+    color: var(--text-color);
+}
+
+.activity-details {
+    font-size: var(--text-sm);
+    color: #6c757d;
+}
+
+/* Popular Programmes */
+.popular-programmes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.popular-programme-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm);
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.popular-programme-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(5px);
+}
+
+.popular-programme-info h3 {
+    font-size: var(--text-base);
+    margin: 0 0 var(--space-xs) 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.programme-level {
+    font-size: var(--text-xs);
+    color: #6c757d;
+    display: block;
+}
+
+.popular-programme-count {
+    text-align: center;
+}
+
+.badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25em 0.6em;
+    border-radius: 50px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: var(--space-xs);
+}
+
+.count-label {
+    display: block;
+    font-size: var(--text-xs);
+    color: #6c757d;
+}
+
+
 /* Responsive Adjustments */
 @media (max-width: 992px) {
     .stat-card {
         margin-bottom: var(--space-sm);
     }
+    
+    .welcome-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .welcome-actions {
+        margin-top: var(--space-sm);
+    }
 }
 
 @media (max-width: 768px) {
-    .action-buttons {
-        flex-direction: column;
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .activity-timeline::before {
+        left: 12px;
+    }
+    
+    .activity-item {
+        padding-left: var(--space-lg);
+    }
+    
+    .activity-icon {
+        width: 24px;
+        height: 24px;
+        font-size: var(--text-xs);
     }
 }
