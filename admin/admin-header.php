@@ -18,7 +18,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Admin dashboard for Student Course Hub - Manage programmes, enquiries, and applications.">
+    <meta name="description" content="Admin dashboard for Student Course Hub - Manage programmes, modules, and applications.">
     
     <title><?php echo isset($page_title) ? htmlspecialchars($page_title) . ' - ' : ''; ?>Admin Portal</title>
     
@@ -66,9 +66,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         </a>
                     </li>
                     <li class="admin-nav-item">
-                        <a class="admin-nav-link <?php echo $current_page === 'enquiries.php' ? 'active' : ''; ?>" 
-                           href="enquiries.php">
-                           <i class="fas fa-question-circle"></i> Enquiries
+                        <a class="admin-nav-link <?php echo $current_page === 'modules.php' ? 'active' : ''; ?>" 
+                           href="modules.php">
+                           <i class="fas fa-book"></i> Modules
                         </a>
                     </li>
                     <li class="admin-nav-item">
@@ -78,9 +78,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         </a>
                     </li>
                     <li class="admin-nav-item">
-                        <a class="admin-nav-link <?php echo $current_page === 'events.php' ? 'active' : ''; ?>" 
-                           href="events.php">
-                           <i class="fas fa-calendar-alt"></i> Events
+                        <a class="admin-nav-link <?php echo $current_page === 'staff.php' ? 'active' : ''; ?>" 
+                           href="staff.php">
+                           <i class="fas fa-users"></i> Staff
                         </a>
                     </li>
                     <li class="admin-nav-item">
@@ -114,4 +114,4 @@ $current_page = basename($_SERVER['PHP_SELF']);
     
     <!-- Main Content -->
     <main class="admin-main-content">
-        <div class="admin-content-container"> 
+        <div class="admin-content-container">
