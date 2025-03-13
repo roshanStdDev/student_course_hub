@@ -123,4 +123,143 @@ require_once 'admin-header.php';
     </div>
 </div>
 
+<!-- Dashboard Overview -->
+<div class="dashboard-stats">
+    <div class="row">
+        <div class="col-6 col-lg-3">
+            <div class="stat-card primary-stat">
+                <div class="stat-card-content">
+                    <div class="stat-card-title">Programmes</div>
+                    <div class="stat-card-value">
+                        <?php 
+                        $total_programmes = 0;
+                        foreach ($programme_counts as $count) {
+                            $total_programmes += $count['count'];
+                        }
+                        echo $total_programmes; 
+                        ?>
+                    </div>
+                    <div class="stat-card-desc">
+                        <?php 
+                        $undergraduate_count = 0;
+                        $postgraduate_count = 0;
+                        
+                        foreach ($programme_counts as $count) {
+                            if (stripos($count['LevelName'], 'undergraduate') !== false) {
+                                $undergraduate_count = $count['count'];
+                            } elseif (stripos($count['LevelName'], 'postgraduate') !== false) {
+                                $postgraduate_count = $count['count'];
+                            }
+                        }
+                        
+                        echo $undergraduate_count . ' Undergraduate, ' . $postgraduate_count . ' Postgraduate';
+                        ?>
+                    </div>
+                </div>
+                <div class="stat-card-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-6 col-lg-3">
+            <div class="stat-card secondary-stat">
+                <div class="stat-card-content">
+                    <div class="stat-card-title">Modules</div>
+                    <div class="stat-card-value"><?php echo $total_modules; ?></div>
+                    <div class="stat-card-desc">Total modules in database</div>
+                </div>
+                <div class="stat-card-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-6 col-lg-3">
+            <div class="stat-card tertiary-stat">
+                <div class="stat-card-content">
+                    <div class="stat-card-title">Staff</div>
+                    <div class="stat-card-value"><?php echo $total_staff; ?></div>
+                    <div class="stat-card-desc">Academic staff members</div>
+                </div>
+                <div class="stat-card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-6 col-lg-3">
+            <div class="stat-card quaternary-stat">
+                <div class="stat-card-content">
+                    <div class="stat-card-title">Student Interests</div>
+                    <div class="stat-card-value"><?php echo $total_interests; ?></div>
+                    <div class="stat-card-desc">
+                        <span class="highlight"><?php echo $recent_interests; ?></span> in last 30 days
+                    </div>
+                </div>
+                <div class="stat-card-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dashboard Content -->
+<div class="row">
+    <!-- Recent Registrations -->
+    <div class="col-12 col-lg-7">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Recent Interest Registrations</h2>
+                <a href="interests.php" class="btn btn-sm">View All</a>
+            </div>
+            <div class="card-body">
+                <?php if (empty($recent_registrations)): ?>
+                    <p class="text-muted">No recent registrations found.</p>
+                <?php else: ?>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Programme</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($recent_registrations as $registration): ?>
+                                    <tr>
+                                        <td><?php echo htmlspecialchars($registration['StudentName']); ?></td>
+                                        <td><?php echo htmlspecialchars($registration['Email']); ?></td>
+                                        <td>
+                                            <?php if ($registration['ProgrammeName']): ?>
+                                                <?php echo htmlspecialchars($registration['ProgrammeName']); ?>
+                                            <?php else: ?>
+                                                <span class="text-muted">Unknown programme</span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td><?php echo date('d M Y', strtotime($registration['RegisteredAt'])); ?></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="interest-view.php?id=<?php echo $registration['InterestID']; ?>" class="btn btn-sm btn-view">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="interest-delete.php?id=<?php echo $registration['InterestID']; ?>" class="btn btn-sm btn-delete" onclick="return confirm('Are you sure you want to delete this registration?');">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        
+        
 <?php require_once 'admin-footer.php'; ?>
