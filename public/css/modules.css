@@ -1,0 +1,188 @@
+/* ========================================
+   Module Management Page Specific Styles
+   ======================================== */
+
+/* Module Header Banner */
+.module-header-banner {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px var(--shadow);
+}
+
+.module-header-content h2 {
+    margin-bottom: var(--space-xs);
+}
+
+.module-header-actions {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+/* Buttons */
+.module-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.module-btn:hover {
+    background-color: var(--hover-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.module-btn i {
+    margin-right: 0.5rem;
+}
+
+.module-btn-sm {
+    padding: 0.25rem 0.75rem;
+    font-size: var(--text-sm);
+}
+
+.module-btn-light {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.module-btn-light:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.module-btn-edit {
+    background-color: #4caf50;
+    color: white;
+}
+
+.module-btn-view {
+    background-color: #2196f3;
+    color: white;
+}
+
+.module-btn-delete {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Alerts */
+.module-alert {
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-md);
+}
+
+.module-alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.module-alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.module-alert i {
+    margin-right: 0.5rem;
+}
+
+/* Cards */
+.module-card {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 5px var(--shadow);
+    margin-bottom: var(--space-md);
+    overflow: hidden;
+}
+
+.module-card-header {
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--primary-color);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.module-card-title {
+    margin: 0;
+    font-size: var(--text-lg);
+}
+
+.module-card-body {
+    padding: var(--space-md);
+}
+
+/* Tables */
+.module-table-responsive {
+    overflow-x: auto;
+}
+
+.module-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.module-table th,
+.module-table td {
+    padding: var(--space-sm);
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.module-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.module-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.module-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Badges */
+.module-badge {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.module-text-muted {
+    color: #6c757d;
+}
+
+/* Action Buttons */
+.module-action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
