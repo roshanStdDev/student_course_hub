@@ -17,6 +17,8 @@ if (session_status() == PHP_SESSION_NONE) {
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="public/css/header.css">
     <link rel="stylesheet" href="public/css/footer.css">
+    <link rel="stylesheet" href="public/css/programme-details.css">
+
 
     <!-- Page-specific CSS -->
     <?php if($page_title === 'Home'): ?>
