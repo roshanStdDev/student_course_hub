@@ -13,7 +13,7 @@ if (session_status() == PHP_SESSION_NONE) {
     
     <title><?php echo isset($page_title) ? htmlspecialchars($page_title) . ' - ' : ''; ?>Student Course Hub</title>
     
-    <!-- CSS Files -->
+   <!-- CSS Files -->
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="public/css/header.css">
     <link rel="stylesheet" href="public/css/footer.css">
@@ -23,6 +23,8 @@ if (session_status() == PHP_SESSION_NONE) {
     <link rel="stylesheet" href="public/css/homepage.css">
     <?php elseif(strpos($_SERVER['PHP_SELF'], 'programmes.php') !== false): ?>
     <link rel="stylesheet" href="public/css/programmes.css">
+    <?php elseif(strpos($_SERVER['PHP_SELF'], 'programme-details.php') !== false): ?>
+    <link rel="stylesheet" href="public/css/programme-details.css">
     <?php endif; ?>
     
     <!-- Font Awesome Icons -->
