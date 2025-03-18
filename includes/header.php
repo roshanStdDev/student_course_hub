@@ -20,11 +20,13 @@ if (session_status() == PHP_SESSION_NONE) {
 
     <!-- Page-specific CSS -->
     <?php if($page_title === 'Home'): ?>
-    <link rel="stylesheet" href="public/css/homepage.css">
+        <link rel="stylesheet" href="public/css/homepage.css">
     <?php elseif(strpos($_SERVER['PHP_SELF'], 'programmes.php') !== false): ?>
-    <link rel="stylesheet" href="public/css/programmes.css">
-    <?php elseif(strpos($_SERVER['PHP_SELF'], 'programme-details.php') !== false): ?>
-    <link rel="stylesheet" href="public/css/programme-details.css">
+        <link rel="stylesheet" href="public/css/programmes.css">
+    <?php elseif($page_title === 'Search Programmes'): ?>
+        <link rel="stylesheet" href="public/css/search.css">
+    <?php elseif($page_title === 'Register Interest'): ?>
+        <link rel="stylesheet" href="public/css/register-interest.css">
     <?php endif; ?>
     
     <!-- Font Awesome Icons -->
